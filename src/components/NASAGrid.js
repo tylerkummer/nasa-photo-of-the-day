@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NASACard from "./NASACard";
+import DayIncrease from './Day';
 import axios from "axios";
 
 export default function NASAGrid(){
@@ -33,8 +34,10 @@ export default function NASAGrid(){
                 service_version = {apods.service_version}
                 title = {apods.title}
                 url = {apods.url}
-                day = {day}
             />
+            {/* <DayIncrease>
+                day = {day};
+            </DayIncrease> */}
         </div>
     );
 }

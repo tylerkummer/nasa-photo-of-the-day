@@ -26,10 +26,10 @@ const NASACard = props =>{
                 <CardSubtitle>
                     {props.date}
                 </CardSubtitle>
-                <CardBody>
+                {/* <CardBody>
                     <Button style={{margin: '5px'}} onClick="props.day--">Yesterday</Button>
                     <Button style={{margin: '5px'}} onClick="props.day++">Tomorrow</Button>
-                </CardBody>
+                </CardBody> */}
             </CardBody>
             <CardImg className="apod-image" alt="Image of APOD" src={props.url} />
             <CardBody style={{ backgroundColor: 'crimson' }}>
