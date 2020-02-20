@@ -20,7 +20,7 @@ const NASACard = props =>{
     return (
         <Card style={{ margin: '15px auto', width: '50%', border: 'solid pink' }}>
             <CardBody style={{ backgroundColor: 'lightblue' }}>
-                <CardTitle>
+                <CardTitle style={{fontWeight: 'bold'}}>
                     {props.title}
                 </CardTitle>
                 <CardSubtitle>
