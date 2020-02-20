@@ -4,8 +4,12 @@ import axios from "axios";
 
 export default function NASAGrid(){
     const [apods, setApods] = useState([]);
-    
-    const [date, setDate] = useState('&date=2012-03-14');
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let now = `${year}-${month}-${day}`;
+    const [date, setDate] = useState(`&date=${now}`);
 
     useEffect(() => {
         axios
@@ -21,30 +25,16 @@ export default function NASAGrid(){
 
     return (
         <div className="container">
-            {/* {apods.map(apod => {
-                return(
-                    <NASACard
-                        date = {apod.date}
-                        explanation = {apod.explanation}
-                        hdurl = {apod.hdurl}
-                        media_type = {apod.media_type}
-                        service_version = {apod.service_version}
-                        title = {apod.title}
-                        url = {apod.url}
-                    />
-                );
-            })} */}
-
-                <NASACard
-                    date = {apods.date}
-                    explanation = {apods.explanation}
-                    hdurl = {apods.hdurl}
-                    media_type = {apods.media_type}
-                    service_version = {apods.service_version}
-                    title = {apods.title}
-                    url = {apods.url}
-                />
-            
+            <NASACard
+                date = {apods.date}
+                explanation = {apods.explanation}
+                hdurl = {apods.hdurl}
+                media_type = {apods.media_type}
+                service_version = {apods.service_version}
+                title = {apods.title}
+                url = {apods.url}
+                day = {day}
+            />
         </div>
     );
 }
